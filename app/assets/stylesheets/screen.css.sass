@@ -1,0 +1,329 @@
+/* Screen Styles by Nicki Rios | www.nickirios.com, nicki.rios@gmail.com */
+
+// Variables
+$color1: #0D0D0D /* darkest gray */
+$color2: #333333 /* dark gray */
+$color3: #888888 /* medium gray */
+$color4: #999999 /* gray */
+$color5: #CCCCCC /* light gray */
+$color6: #FFFFFF /* white */
+$verticalPadding: 0.5em 0
+$thickBorder: 6px solid $color2
+$thinBorder: 1px solid $color1
+$thinLightBorder: 1px solid $color3
+$rounded: 5px
+
+// Typography Mixins
+=main-fonts
+	font-family: Bookman Old Style, Book Antiqua, Georgia, serif
+=secondary-fonts
+	font-family: Franklin Gothic Book, Verdana, sans serif
+
+/***** global ***************************/
+body
+	background-image: url(bkgd.png)
+#page_container
+	width: 100%
+	max-width: 1200px
+	margin: 0 auto
+	+main-fonts
+	border-top: $thickBorder
+	color: $color1
+	line-height: 1.5em
+	font-size: 1.25em
+	p
+		padding: $verticalPadding
+a
+	+secondary-fonts
+	text-decoration: underline
+	color: $color2
+a:hover, a:focus
+	color: $color4
+ul
+	list-style-type: square
+	list-style-position: inside
+blockquote
+	display: block
+	border-left: $thinBorder
+	padding-left: 8%
+	padding-right: 8%
+	font-style: italic
+blockquote:before
+	float: left
+	content: '"'
+	font-size: 280%
+	padding: 0.25em 15px 5px 0
+	margin-left: -35px
+q
+	font-style: italic
+q:before, q:after
+	content: '"'
+
+/***** header ***************************/
+header
+	text-align: center
+	#logo
+		padding: 1.5em 0
+		margin: 0 4%
+		a
+			+main-fonts
+			font-size: 1.5em
+			text-decoration: none
+	nav#menu
+		+secondary-fonts
+		padding: 1em 0
+		border-top: $thinBorder
+		border-bottom: $thickBorder
+		margin: 0 4%
+		li
+			display: inline
+			padding: 1em 8%
+			a
+				font-size: 1.25em
+				padding: 0.1em 0
+				text-decoration: none
+			a:hover, a:focus
+				border-bottom: 1px solid $color4
+
+/***** content **************************/
+#page
+	margin: 0 auto
+	width: 92%
+	padding: 0 4%
+#body_content_title
+	padding: 1em 0 0 0
+	font-size: 1.75em
+#body, #body_content_left
+	width: 100%
+	padding: 1em 0 0 0
+	margin-bottom: 0.5em
+article.blog_post, article#blog_post
+	padding: $verticalPadding
+	h1
+		font-size: 1.5em
+	h2
+		font-size: 1.4em
+	h3
+		font-size: 1.3em
+	h4
+		font-size: 1.2em
+	h5
+		font-size: 1.1em
+	h6
+		font-size: 1em
+	header
+		text-align: left
+		h1 a
+			+main-fonts
+		.details
+			+secondary-fonts
+			font-size: 0.9em
+			color: $color4
+			a
+				color: $color4
+			a:hover, a:focus
+				color: $color2
+		time
+			float: right
+	footer
+		+secondary-fonts
+		font-size: 0.9em
+		color: $color4
+		a
+			padding: $verticalPadding
+			color: $color4
+		a:hover, a:focus
+			color: $color2
+.blog_post:first-child
+	padding: 0.5em 0
+.blog_post
+	border-bottom: $thinLightBorder
+	padding: 2em 0
+	header
+		padding: $verticalPadding
+	footer
+		padding: $verticalPadding
+		p
+			float: right
+			margin-top: -0.5em
+.blog_post:last-of-type
+	border-bottom: none
+#next_prev_article
+	padding: 2em 0
+	a
+		padding: 2em 0
+.pagination
+	+secondary-fonts
+	padding: $verticalPadding
+	text-align: center
+	a, em, span
+		padding: 0.25em 8px
+		border-radius: $rounded
+		color: $color1
+		background-color: $color6
+		border: $thinBorder
+		text-decoration: none
+	em
+		background-color: $color5
+	a:hover, a:focus, span:hover, span:focus
+		color: $color1
+		background-color: $color5
+	.disabled:hover, .disabled:focus
+		background-color: $color6
+#comments
+	border-top: $thinBorder
+	padding: 1em 0
+	h2
+		text-align: center
+.blog_comment_message
+	font-size: 0.75em
+	margin-bottom: 1em
+	.avatar
+		float: left
+		max-width: 25%
+		max-height: 200px
+		margin-top: 0.75em
+	p
+		width: 71%
+		padding-left: 4%
+		float: right
+
+/***** sidebar **************************/
+#side_body
+	width: 100%
+#body_content_right
+	width: 100%
+	padding: 0 0 1em 0
+	border-top: $thickBorder
+	h2
+		font-size: 1.2em
+		padding-top: 1em
+	ul
+		list-style-type: square
+		list-style-position: inside
+
+/***** footer ***************************/
+#page-footer
+	max-width: 1200px
+	margin: 0 auto
+	margin: 1em 4% 0 4%
+	padding: 0.5em 4%
+	text-align: center
+	font-size: 0.8em
+	border-top: $thinBorder
+
+/***** forms **************************/
+input[type="text"], input[type="email"], textarea
+	width: 100%
+	padding: 0.25em 1%
+	font-size: 1em
+	border-radius: $rounded
+	border: none
+	box-shadow: inset 2px 2px 3px rgba(0,0,0,.5)
+	background-color: $color6
+textarea
+	min-height: 11em
+
+/***** buttons **************************/
+input[type="submit"]
+	padding: 0.5em 10px
+	margin: 0.5em 0
+	font-size: 0.95em
+	background-color: $color3
+	border: none
+	border-radius: $rounded
+	background-color: $color4
+	box-shadow: inset 2px 2px 4px rgba(0,0,0,.5)
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color5), to($color4))
+	background-image: -webkit-linear-gradient(top, $color5, $color4)
+	background-image: -moz-linear-gradient(top, $color5, $color4)
+	background-image: -ms-linear-gradient(top, $color5, $color4)
+	background-image: -o-linear-gradient(top, $color5, $color4)
+input[type="submit"]:hover, input[type="submit"]:focus
+	background-color: $color5
+	box-shadow: inset 2px 2px 4px rgba(0,0,0,.5)
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color6), to($color5))
+	background-image: -webkit-linear-gradient(top, $color6, $color5)
+	background-image: -moz-linear-gradient(top, $color6, $color5)
+	background-image: -ms-linear-gradient(top, $color6, $color5)
+	background-image: -o-linear-gradient(top, $color6, $color5)
+input[type="submit"]:active
+	background-color: $color4
+	box-shadow: inset 2px 2px 3px rgba(0,0,0,.5)
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color4), to($color5))
+	background-image: -webkit-linear-gradient(top, $color4, $color5)
+	background-image: -moz-linear-gradient(top, $color4, $color5)
+	background-image: -ms-linear-gradient(top, $color4, $color5)
+	background-image: -o-linear-gradient(top, $color4, $color5)
+
+/***** media queries ********************/
+@media screen and (min-width: 600px)
+	#logo
+		margin: 0 8%
+	header nav#menu
+		margin: 0 8%
+	#page
+		width: 84%
+		padding: 0 8%
+	.blog_comment_message p
+		width: 67%
+		padding-left: 8%
+		float: right
+	#comments input[type="submit"]
+		width: 50%
+		float: right
+	#page-footer
+		padding: 0.5em 8%
+		margin: 1em 8% 0 8%
+
+@media screen and (min-width: 800px)
+	#logo
+		margin: 0 12%
+	header nav#menu
+		margin: 0 12%
+		li
+			padding: 1em 12%
+	#page
+		width: 76%
+		padding: 0 12%
+	.blog_comment_message p
+		width: 63%
+		padding-left: 12%
+		float: right
+	#comments input[type="submit"]
+		width: 25%
+	#page-footer
+		padding: 0.5em 12%
+		margin: 1em 12% 0 12%
+
+@media screen and (min-width: 1000px)
+	#logo
+		margin: 0 12.5%
+	header nav#menu
+		margin: 0 12.5%
+		li
+			padding: 1em 12.5%
+	#page
+		width: 75%
+		padding: 0 12.5%
+	#body, #body_content_left
+		width: 68.5%
+		padding-right: 6.25%
+		float: left
+		border-right: 1px solid $color5
+	.blog_comment_message p
+		width: 62.5%
+		padding-left: 12.5%
+		float: right
+	#side_body
+		width: 18.75%
+		padding-left: 6.25%
+		float: right
+	#body_content_right
+		width: 18.75%
+		padding-left: 6.25%
+		float: right
+		border-top: none
+	#page-footer
+		padding: 0.5em 12.5%
+		margin: 1em 12.5% 0 12.5%
